@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[engineering,deti]{uaThesisTemplate}
+
+%% Optional packages for utf8 encoding and T1 fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+
+%% We will use english and portuguese
+\usepackage[english,portuguese]{babel}
+
+\usepackage{xspace}% used by \sigla
+
+%%% This package is only used to create a dummy
+%%%  text for the abstract. You can remove the
+%%%  following line in the final document.
+%\usepackage{blindtext}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       DEFINE THESIS COVER FIELDS
+%%                  START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Thesis Year
+\ThesisYear{\the\year}
+\DocumentTypeDissertation
+
+%% Author's full name
+\Author{Daniel \\ Nascimento Pedrinho}
+
+%% Thesis Mandatory Title in Portuguese
+\TitlePT{Deteção de e-mails de phishing através de padrões linguísticos e de análise sentimentos}
+
+%% Thesis Optional Title in English
+\TitleEN{Phishing email detection through linguistic patterns and sentiment analysis}
+
+%% Supervisor information
+\Supervisor{João Rafael Duarte de Almeida}{auxiliar}
+
+%% Optional SecondSupervisor information
+\SupervisorMember{Sérgio Guilherme Aleixo de Matos}{associado c/ agregação}{do Departamento de Eletrónica, Telecomunicações e Informática}{da Universidade de Aveiro}{}
+
+%% Degree title and name
+\Degree{Mestre}{Engenharia Informática}
+
+%%% Edit the Jury President information.
+%% First Member will be the President of the Jury
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+
+%%% Repeat the above declaration for additional
+%%%  members of the jury as many times as necessary.
+%% Additional members of the Jury
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+\JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+
+
+
+%%% OPTIONAL: Add an acknowledgement text
+%% Optional Acknowledgement text
+\Acknowledgements{Agradeço toda a ajuda a todos os meus colegas e companheiros.}
+
+%%% Edit the keywords and abstract in Portuguese
+%%% Don't forget to remove the \blindtext[3]
+%%%  declaration.
+%%% Don't remove the \selectlanguage statement or you will end with incorrect hyphenation
+%% Mandatory Keywords and Abstract in Portuguese
+\Abstract{palavras-chave}{e-mail, phishing, análise de sentimentos, padrões linguísticos, segurança informática.}
+         {resumo}{\selectlanguage{portuguese}Com o uso generalizado de e-mail como ferramenta de comunicação, ataques de phishing estão se a tornar cada vez mais comuns e sofisticados. Esta tese explora o uso de padrões linguísticos e análise de sentimentos para detectar e-mails de phishing. Ao analisar o tom emocional e a linguagem utilizada nos e-mails, podemos identificar potenciais tentativas de phishing e melhorar a segurança do e-mail. O sistema proposto utiliza algoritmos de aprendizagem de máquina para classificar e-mails com base nas suas características linguísticas e conteúdo emocional. Os resultados demonstram a eficácia da abordagem na identificação de e-mails de phishing, fornecendo uma ferramenta valiosa para melhorar a segurança do e-mail e proteger os usuários contra ameaças cibernéticas.}
+
+%%% OPTIONAL: you can write the keywords and
+%%%  abstract in other languages. You can repeat
+%%%  the following lines as many times as you want
+%%%  or remove them if you only want portuguese.
+%%% Don't remove the \selectlanguage statement or you will end with incorrect hyphenation.
+%%% You can modify the language to any other supported by Latex
+%% Optional Keywords and Abstract in additional languages.
+\Abstract{keywords}{e-mail, phishing, sentiment analysis, linguistic patterns, computer security.}
+         {abstract}{\selectlanguage{english}With the wide usage of e-mail as a communication tool, phishing attacks have become increasingly common and sophisticated. This thesis explores the use of linguistic patterns and sentiment analysis to detect phishing emails. By analyzing the emotional tone and language used in emails, we can identify potential phishing attempts and improve email security. The proposed system utilizes machine learning algorithms to classify emails based on their linguistic features and emotional content. The results demonstrate the effectiveness of this approach in identifying phishing emails, providing a valuable tool for enhancing email security and protecting users from cyber threats.}
+
+
+%%% OPTIONAL: Acknowledge the use of AI Tools
+\AIUse{I acknowledge the use of ChatGPT 3.5 (Open AI, https://chat.openai.com) to summarise the initial notes and to proofread the final draft.
+}
+%Reconheço o uso de [inserir sistema(s) de IA e respetiva hiperligação] para [indicar utilização específica de IA ou outras tarefas]. Reconheço a utilização de [indicar software, código ou plataforma] para [indicar utilização específica de software, código ou platafoma ou para outras tarefas].
+%Exemplo 1: Reconheço a utilização do ChatGPT 3.5 (Open AI, https://chat.openai.com) para resumir as notas iniciais e para rever o rascunho final, a utilização do Office365 (Microsoft, https://www.office.com) para a escrita do texto.
+%Exemplo 2: Não foram utilizados no presente trabalho quaisquer conteúdos gerados por tecnologias de IA.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       DEFINE THESIS COVER FIELDS
+%%                  END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\selectlanguage{english}
+
+
+\MakeCover
+\end{document}
