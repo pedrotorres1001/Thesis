@@ -1,93 +1,219 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{pifont}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+
+\newcommand{\cmark}{\ding{51}} % ✓
+
+\captionsetup[table]{skip=10pt}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{document}
+
 \chapter{Estado da Arte}
 
-This chapter presents the state of the art that will set the stage for the work developed in this dissertation.
+\section{Tecnologias Digitais nos Museus}
 
-\section{Jogos sérios na educação}
+\textbf{História:} As tecnologias digitais introduziram profundas transformações em toda a cadeia de valor dos museus, desde a catalogação e preservação digital até à experiência de visita presencial e remota. Na década de 1990, a digitalização de acervos permitiu maior organização interna, mas foi com a massificação da Internet, dos dispositivos móveis e do acesso à realidade aumentada e virtual, no final dos anos 2000 e 2010, que se iniciou uma nova era de inovação no contacto com os públicos. Os museus portugueses, acompanhando a tendência global, lançaram plataformas online, campanhas de digitalização massiva, catálogos acessíveis remotamente e, gradualmente, aplicações móveis para visita enriquecida, propondo narrativas interativas e inclusão de conteúdos multimedia direcionados a diferentes faixas etárias e perfis de visitante. O acesso à Google Arts \& Culture, o investimento em apps próprias e em projetos de realidade mista demonstram o papel assumido pelas tecnologias como eixos estratégicos de mediação e aproximação às comunidades, tornando o museu mais aberto, experimental e dinâmico.
 
-E-mail, short for electronic mail, is a method of exchanging messages over the internet or computer networks. It is one of the most widely used forms of digital communication today, with billions of users worldwide. E-mail remains a central medium not only for legitimate communication but also as a primary attack vector exploited by cybercriminals through phishing and malware distribution.
 
-From a technical perspective, e-mail is structured according to the Internet Message Format (\acs{RFC} 5322), which defines the standard headers and body content of a message, such as sender, recipient, subject, date, and message body \cite{rfc5322}. This specification was later updated by \acs{RFC} 6854, which introduced support for group syntax in the From: and Sender: header fields, thereby allowing messages to represent multiple authors or senders in a structured and standardized manner \cite{rfc6854}. Individual messages can be stored and exchanged as .eml files, a format that encapsulates the full message including metadata (headers), body text, and attachments using the MIME standard. The .eml format is particularly relevant in research contexts, as it preserves raw information such as authentication results, routing paths, and content features that are useful for forensic analysis and machine learning-based detection approaches.
+\paragraph{}\textbf{Vantagens:}
+\begin{itemize}
+    \item Democratização do acesso: ferramentas digitais tornaram acessíveis milhares de peças e conteúdos a públicos geograficamente afastados, portadores de deficiência e diferentes gerações.
+    \item Maior atratividade e autonomia dos visitantes: as soluções tecnológicas possibilitam visitas personalizadas, trilhos temáticos, experiências educativas em família ou em contexto escolar, bem como oportunidades de experimentação e exploração lúdica ou pedagógica.
+    \item Otimização da gestão e da avaliação: a recolha automática de dados permite mapear os percursos e interesses do público, facilitando melhorias continuadas na programação e experiência museológica.
+\end{itemize}
+\paragraph{}\textbf{Desvantagens:}
+\begin{itemize}
+    \item Elevados custos tecnológicos e dependência de atualizações constantes, incluindo riscos de obsolescência precoce dos equipamentos ou plataformas.
+    \item Barreiras para visitantes com reduzida literacia digital, idosos ou grupos sociais sem fácil acesso a dispositivos e Internet.
+    \item Risco de sobreposição do digital ao património físico, quando a tecnologia não é articulada com objetivos museológicos claros, levando a experiências descontextualizadas ou superficiais.
+\end{itemize}
 
-As one of the most popular communication tools, e-mail has become a prime target for cyber attacks. Its widespread use, combined with the inherent trust users place in messages that appear legitimate, makes e-mail an ideal vector for malicious actors seeking to steal sensitive information, distribute malware, or manipulate recipients into performing certain actions. Among the various threats that exploit e-mail, phishing has emerged as one of the most prevalent and damaging, leveraging social engineering techniques to deceive users into revealing credentials, financial information, or other confidential data.
+Neste quadro sintetiza-se uma comparação dos jogos digitais mais relevantes que serão descritos nos subtópicos posteriores.
 
-\section{Gamificação e engagement em jogos educativos}
-
-Phishing is a type of cyber attack in which an attacker attempts to deceive individuals into providing sensitive information, such as usernames, passwords, or financial details, by disguising as a trustworthy entity through electronic communication channels, most commonly e-mail. Phishing attacks often employ social engineering tactics, exploiting users’ trust, fear, or curiosity, and can include malicious links, fraudulent websites, or deceptive attachments.
-
-In 2024, according to the \ac{APWG}, phishing attacks have been on a decline, totaling 3.7 million attacks, down roughly 24\% from 2023.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figs/phishing_trends.png}
-    \caption{Number of Phishing Attacks over time (Source: APWG)}
-    \label{fig:phishing_trends}
-\end{figure}
-
-Although a decrease in attacks is a positive sign, phishing remains a significant threat due to its adaptability and the increasing sophistication of attacks. According to the \acs{IC3} 2024 \acs{FBI} report, phishing attacks resulted in the loss of USD 70 million, clearly showing that phishing is still a relevant threat \cite{IC32024}. These attacks often coincide with larger data breaches, further magnifying their impact on organizations and individuals.
-
-To mitigate the threat of phishing, a wide range of technical solutions has been developed. 
-These include email authentication protocols such as \ac{SPF}, \ac{DKIM}, and \ac{DMARC}, which help verify the legitimacy of senders and reduce the likelihood of spoofed messages reaching users’ inboxes \cite{DEROUET20165}.
-
-Transport-layer protections like \ac{MTA-STS} and \ac{TLS} reporting further strengthen the security of email delivery, ensuring that messages are transmitted securely between servers and are less vulnerable to interception or tampering.
-
-Additionally, advanced \ac{ML} and \ac{DL} approaches have been increasingly applied to detect phishing attempts. Models can leverage features extracted from email headers, body content, URLs, and attachments, with recent transformer-based architectures and embedding techniques providing state-of-the-art performance in identifying both traditional and sophisticated phishing messages.
-
-\section{Museu virtual enquanto jogo educativo}
-
-\ac{ML} and \ac{DL} approaches have been the subject of extensive research in the context of phishing detection.
-Attackers have been using \ac{AI} to create more convincing phishing emails, and as such, researchers are increasingly focusing on developing robust detection mechanisms that can adapt to evolving threats.
-
-Traditional machine learning techniques are no longer sufficient to combat the sophisticated nature of modern phishing attacks \cite{Fernandes2024}. Most systems relied heavily on engineered features extracted from emails, including header fields (such as \textit{sender} or \textit{received} chain), lexical and textual cues (e.g. \ac{TF-IDF} and bag-of-words), URL tokenization, structural HTML features, and attachment metadata. These features were typically fed into classical classifiers, such as \ac{SVM}, Random Forests, Naive Bayes, or Logistic Regression. Early deep learning models, including \acp{CNN} and \acp{RNN}/\ac{LSTM}, were also applied to textual and structural components, providing promising results but still often being outperformed by well-engineered classical approaches. 
-
-Since then, there have been several significant advances in the \ac{ML}/\ac{DL} space for email-based phishing detection:
-
-Pretrained transformer architectures, like \ac{BERT}, \ac{DistilBERT}, and \ac{RoBERTa}, have been fine-tuned for phishing detection tasks. These models effectively encode the email body, subject lines, and sometimes HTML structure into embeddings that capture semantic and contextual signals beyond simple lexical overlaps \cite{uddin2025}.
-
-Modern systems more often integrate multiple input modalities: authentication metadata (\ac{SPF}/\ac{DKIM}/\ac{DMARC}), header features, embedding representations of textual content, URL encoders, HTML structure features, and outputs from attachment analysis or sandbox environments \cite{PATRA2025110403, electronics12204261}.
-
-Another technique used to detect phishing is vector similarity search. This technique involves converting raw emails into high-dimensional vectors using transformer embeddings. These vectors can then be compared to identify similarities between emails, using methods such as cosine similarity or Euclidean distance. Although this approach yielded better results than traditional \ac{ML} techniques, it was still outperformed by fine-tuned transformer models~\cite{PATRA2025110403}.
-
-\section{Faixa etária dos 11 aos 13 anos}
-
-While most research focuses on technical and structural features of phishing emails, a section of analysis that has been largely overlooked is sentiment analysis.
-
-Sentiment analysis involves using \ac{NLP} techniques to identify and extract subjective information from text, such as emotions, opinions, or attitudes. In the context of phishing detection, sentiment analysis can provide insights into the emotional tone and persuasive strategies employed by attackers. This can help cyber security professionals better understand the psychological tactics used, and possibly protect email users from said entity of being targeted by certain tactics, like blackmail.
-
-In previous works, sentiment or tone was occasionally used as one auxiliary signal: existing works might include keyword frequency (urgency / fear words), lexical heuristics (e.g. counts of exclamation marks, imperative mood etc.). However, these were generally simpler, lexicon-based or manually curated features.
-
-Most models prioritized content / URL / header / attachment features, leaving sentiment / emotional tone as a minor axis of research. This, combined with the fact that in many datasets, the emotional manipulation was implicit rather than explicitly annotated, meant that sentiment features were often noisy or under-utilized.
-
-In a recent work, \ac{DistilBERT} was used to extract embeddings that carry sentiment / tone information, that was fed into a classical \ac{SVM}. This was compared to simply using \ac{SVM} by itself, and the results showed that the sentiment-aware model outperformed the baseline by a 3\% margin in F1-score (97\% vs 94\%) \cite{salian2024enhancing}.
-
-Another work, "Comparative Investigation of Traditional Machine-Learning Models and Transformer Models for Phishing Email Detection", explicitly stated that results could be further improved by "incorporating sentiment analysis techniques to detect social-engineering tactics and to better understand the emotional tone and intent behind the email content" \cite{electronics13244877}.
-
-As such, its clear that a well annotated dataset with sentiment labels, not just positive / negative labels, could provide valuable insights into the emotional manipulation tactics used in phishing emails, and potentially improve detection performance.
-
-\section{Datasets}
-
-A wide variety of datasets have been used in phishing detection research, ranging from legacy corpora to recently curated collections. Classic datasets such as the Enron E-mail Corpus (released in 2004 during litigation) and the SpamAssassin Public Corpus (2002) remain popular for providing large numbers of benign or spam-related messages, though their age and lack of phishing-specific samples limit their representativeness in modern studies \cite{metsis2006spam,klimt2004enron}. Similarly, the Nazario Phishing Corpus (2006) offered one of the earliest phishing-only collections, though its small size ($\approx 2,000$ messages) and outdated content restrict its usefulness today.
-
-More recent works leverage community-driven sources such as PhishTank, which provides continuously updated phishing URLs, and the \ac{APWG} eCrime Exchange, which offers large feeds of malicious URLs and e-mails to members. These sources have been central to many detection systems but often lack full .eml message structures, making them less suitable for header or attachment-based analysis \cite{mahmoud2023phishing}.
-
-The limitations of these datasets have driven recent efforts to curate larger, more representative corpora. For example, Champa et al. (2025) compiled seven curated phishing datasets totaling over 200,000 instances, addressing the scarcity of structured corpora for ML research \cite{champa2025curated}. Similarly, Caripoti et al. (2025) proposed E-PhishGen, a framework for generating realistic phishing emails using large language models (LLMs), designed to overcome dataset scarcity and linguistic limitations in prior corpora \cite{caripoti2025ephishgen}. Another recent initiative, the EPVME dataset (2024), introduced by Patra et al., aggregates over 600,000 malicious and benign samples while simulating novel attack vectors and vulnerabilities, offering a large-scale benchmark for modern detection techniques \cite{patra2024epvme}.
-
-In addition, there has been increasing interest in synthetic or augmented datasets, where generative models or adversarial methods are used to produce new phishing e-mails. For instance, Caripoti (2024) created a dataset of over 10,000 phishing and legitimate samples, categorized by attack type (malware, credential harvesting, business email compromise), and showed how synthetic data could improve detection robustness across models \cite{caripoti2024synthetic}.
-
-Together, these efforts reflect a clear evolution: while early works relied on small, static corpora, the current state of the art emphasizes large, diverse, and dynamically updated datasets. These developments also highlight the need for open, realistic .eml-based datasets that preserve the structural, textual, and metadata features of modern phishing campaigns, a gap that motivates the construction of new datasets like the one proposed in this thesis.
-
-\begin{table}[ht]
+\begin{table}[H]
 \centering
-\caption{Commonly Used Datasets in Phishing Detection Research}
-\label{tab:phishing_datasets}
-\begin{tabular}{|p{3cm}|p{3cm}|p{4cm}|p{5cm}|}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|}
 \hline
-\textbf{Dataset / Corpus} & \textbf{Year / Source} & \textbf{Size \& Content} & \textbf{Notes / Usage in Literature} \\ \hline
-Enron E-mail Corpus & Released $\sim$2004 (Enron litigation) & $\sim$500,000 corporate e-mails (benign) & Widely used for legitimate e-mail baseline; not security-focused, language is outdated. \\ \hline
-SpamAssassin Public Corpus & 2002 (Apache SpamAssassin project) & $\sim$6,000 e-mails (spam + ham) & Includes spam, phishing-like, and ham; relatively small, limited diversity. \\ \hline
-Nazario Phishing Corpus & $\sim$2006 (Jose Nazario collection) & $\sim$2,000 phishing e-mails & Historic phishing dataset, small and outdated but influential in early studies. \\ \hline
-PhishTank & Ongoing (community-driven, OpenDNS) & URLs + associated phishing samples & Still widely used, but primarily URL-based; lacks full \texttt{.eml} structure. \\ \hline
-APWG eCrime Exchange & Ongoing (Anti-Phishing Working Group) & Large, dynamic feeds of phishing URLs/e-mails & Research access restricted; provides up-to-date, real-world campaigns. \\ \hline
-Custom / Proprietary Datasets & 2015--present (industry, e.g., Microsoft, Symantec) & Millions of real e-mails, often not public & Used in cutting-edge papers; limited reproducibility for academia. \\ \hline
-Augmented / Synthetic Data & Recent works (2020s) & Varies (often 10k--100k+ samples) & Generated via adversarial text models or heuristics to simulate modern phishing tactics. \\ \hline
+\textbf{Jogo} & \textbf{Narrativa} & \textbf{Decisão / Impacto} & \textbf{Feedback Imediato} & \textbf{Alinhamento Curricular} & \textbf{Colaboração} \\
+\hline
+EcoAtitudes            & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+Game in the Museum     & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\hline
+Missão Arqueólogo VR   & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+ARTe Quiz              &  &  & \cmark & \cmark &  \\
+\hline
 \end{tabular}
+}
+\caption{Tabelas síntese dos jogos digitais museológicos mais relevantes}
 \end{table}
+
+% ---
+\newpage
+\subsection{Realidade Aumentada (AR)}
+
+\textbf{História:} A Realidade Aumentada (AR) nos museus apresenta uma evolução marcada pela convergência entre a massificação dos smartphones e a busca por experiências educativas mais imersivas. Nos primeiros anos da década de 2010, grandes museus europeus e americanos lançaram pilotos de AR integrando animações sobre exposições e visitas temáticas, facilitando o cruzamento entre o real e o virtual em tempo real. Em Portugal, projetos como o ARTe Quiz e apps institucionais abriram caminho para a co-criação de conteúdos educativos entre equipas museológicas, tecnológicos e escolares. A implementação gradual da AR permitiu, por exemplo, visualizar objetos recriados em 3D, percursos gamificados e layers de informação histórica, promovendo o envolvimento e a aprendizagem ativa do público escolar e familiar, muitas vezes em parceria com entidades do ensino básico e secundário.
+
+\paragraph{}\textbf{Vantagens:}
+\begin{itemize}
+    \item Potencia visitas interativas, promovendo autonomia, curiosidade e personalização do percurso.
+    \item Permite apresentar conteúdos adaptados ao perfil do visitante, língua, faixa etária ou necessidade educativa especial.
+    \item Estimula o envolvimento de públicos normalmente menos motivados por exposições tradicionais.
+\end{itemize}
+\paragraph{}\textbf{Desvantagens:}
+\begin{itemize}
+    \item Depende de equipamentos dos visitantes (telemóveis, tablets) e pode excluir quem não tem acesso.
+    \item Exige investimento local em desenvolvimento, atualizações contínuas e validação pedagógica dos conteúdos.
+    \item Pode provocar sobrecarga sensorial ou desvio de atenção das peças físicas, se não houver integração adequada com a mediação presencial.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Projeto/Aplicação} & \textbf{Guias AR} & \textbf{Jogos Integrados} & \textbf{Percurso Personalizado} & \textbf{Inclusão e Acessibilidade} & \textbf{Exploração Livre} \\
+\hline
+Museu App AR       & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+ARTe Quiz          & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+EcoAtitudes AR     &  & \cmark &  & \cmark &  \\
+\hline
+\end{tabular}
+}
+\caption{Exemplos e aspetos diferenciadores de implementações AR em museus}
+\end{table}
+
+% ---
+
+\subsection{Realidade Virtual (VR)}
+
+\textbf{História:} A Realidade Virtual em museus emergiu a partir de experiências pioneiras nos anos 2010, propondo visitas imersivas a espaços e acervos inacessíveis, ou simulando contextos históricos e científicos. No início, exigia hardware dedicado e era utilizada apenas em grandes eventos e projetos pontuais; com a democratização dos óculos VR e plataformas 3D, passou a integrar exposições fixas, visitas educativas, oficinas e até projetos de colaboração internacional envolvendo museus portugueses e estrangeiros. O desenvolvimento acelerado de conteúdos de reconstrução arqueológica, ciência e ambiente, associado à valorização da experimentação digital, colocou a VR como ferramenta estratégica de mediação e valorização do património.
+
+\paragraph{}\textbf{Vantagens:}
+\begin{itemize}
+    \item Oferece experiências sensoriais imersivas, permitindo reconstituir espaços desaparecidos ou contextos históricos de difícil acesso.
+    \item Facilita a experimentação, aprendizagem ativa, simulações e visitas remotas, sendo útil para públicos com mobilidade reduzida.
+    \item Potencia o ensino interdisciplinar, cruzando história, ciência, geografia e literatura de forma envolvente.
+\end{itemize}
+\paragraph{}\textbf{Desvantagens:}
+\begin{itemize}
+    \item Investimento elevado em hardware, licenças e formação técnica das equipas.
+    \item Limitações físicas (motion sickness, tempo de uso, adaptação) e barreiras a públicos com necessidades especiais não contempladas tecnicamente.
+    \item Pode transformar-se em experiência isolada do património real, perdendo valor formativo se não articulada com atividades presenciais e mediadores.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Projeto} & \textbf{Visita 360º} & \textbf{Reconstrução 3D} & \textbf{Jogos VR} & \textbf{Foco Educativo} & \textbf{Livre vs Guiada} \\
+\hline
+Museu Virtual 360     & \cmark & \cmark &  & \cmark & \cmark \\
+\hline
+Design Museum VR      & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\hline
+VISITOR Museums       & \cmark & \cmark & \cmark &  & \cmark \\
+\hline
+Missão Arqueólogo VR  &  & \cmark & \cmark & \cmark & \cmark \\
+\hline
+\end{tabular}
+}
+\caption{Exemplos e aspetos diferenciadores de implementações VR em museus}
+\end{table}
+
+% ---
+
+\subsection{Jogos Digitais}
+
+\textbf{História:} A apropriação dos jogos digitais por museus ocorreu inicialmente em plataformas web, CD-ROM e, posteriormente, em aplicações móveis e tablets. O crescimento do movimento serious games desde 2010 levou à criação de jogos de exploração, aventura e simulação ligados ao percurso expositivo, experimentados tanto em visitas presenciais como em virtual tours. Museus portugueses apostam em jogos que promovem o pensamento científico-crítico, a sensibilização ambiental e o trabalho em equipa, reforçando a ligação entre o visitante e as narrativas museológicas.
+
+\paragraph{}\textbf{Vantagens:}
+\begin{itemize}
+    \item Elevam o envolvimento do visitante, promovendo sentimento de conquista, descoberta e resolução de desafios.
+    \item Permitem feedback imediato, adaptando dificuldade e sugestões ao progresso do utilizador/aluno.
+    \item Viabilizam a aprendizagem personalizada e a avaliação formativa, essenciais na integração curricular formal.
+\end{itemize}
+\paragraph{}\textbf{Desvantagens:}
+\begin{itemize}
+    \item Risco de dispersar o foco educativo se o equilíbrio entre diversão e aprendizagem não for garantido.
+    \item Exigem recursos técnicos e pedagógicos para desenvolvimento, implementação e atualização.
+    \item A acessibilidade pode não ser universal e nem todos os públicos demonstram predisposição para modelos lúdico-digitais.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{Jogo} & \textbf{Narrativa} & \textbf{Decisão / Impacto} & \textbf{Feedback Imediato} & \textbf{Alinhamento Curricular} & \textbf{Colaboração} \\
+\hline
+EcoAtitudes            & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+Game in the Museum     & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\hline
+ARTe Quiz              &  &  & \cmark & \cmark &  \\
+\hline
+Missão Arqueólogo VR   & \cmark & \cmark & \cmark & \cmark &  \\
+\hline
+Modelos 3D            &  &  & \cmark & \cmark & \cmark \\
+\hline
+\end{tabular}
+}
+\caption{Comparação de jogos digitais em museus: principais características}
+\end{table}
+
+% ---
+
+\section{Jogos como Ferramentas de Comunicação e Aprendizagem}
+
+\textbf{História:} O game-based learning (GBL) em museus evoluiu na última década, inspirado pelo sucesso das metodologias ativas no ensino formal. Os museus passaram a adotar jogos digitais, quizzes, simulações e missões como estratégias de mediação integradas no percurso expositivo. Estes recursos são idealizados em articulação com currículos escolares e educativos, fomentando autonomia, criatividade e colaboração dos visitantes.
+
+\paragraph{}\textbf{Vantagens:}
+\begin{itemize}
+    \item Estimula autonomia, resolução criativa de problemas, pensamento crítico e colaboração.
+    \item Permite avaliação contínua, feedback formativo imediato e motivação sustentada.
+    \item Facilita a adaptação ao ritmo, interesses e estilo de aprendizagem de cada visitante ou grupo.
+\end{itemize}
+\paragraph{}\textbf{Desvantagens:}
+\begin{itemize}
+    \item Requer investimento pedagógico e tecnológico e parcerias entre equipa museológica e escolas/comunidade.
+    \item Exige planeamento curricular rigoroso e atualização constante dos conteúdos.
+    \item Pode gerar resistências em públicos habituados a mediação tradicional e não garantir acessibilidade digital plena.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+\textbf{Jogo/Atividade} & \textbf{Tipo} & \textbf{Narrativa} & \textbf{Decisão} & \textbf{Feedback} & \textbf{Colaboração} & \textbf{Currículo} & \textbf{Avaliação} \\
+\hline
+Quiz AR Exposições      & Quiz/AR   &  &  & \cmark &  & \cmark &  \\
+\hline
+Missão Arqueólogo VR    & Simulação & \cmark & \cmark & \cmark &  & \cmark & \cmark \\
+\hline
+EcoAtitudes             & Sério     & \cmark & \cmark & \cmark &  & \cmark & \cmark \\
+\hline
+Game in the Museum      & Aventura  & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\hline
+Modelos 3D              & Criativo  &  &  & \cmark & \cmark & \cmark &  \\
+\hline
+\end{tabular}
+}
+\caption{Comparação de exemplos de game-based learning em museus}
+\end{table}
+
+\end{document}
